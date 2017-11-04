@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
-//var conn = require('../Config/mysqlConnection');
 
 /* Connecting to Database.*/
 var conn = mysql.createConnection({
@@ -29,7 +28,6 @@ router.post('/insertStu',function(req,res,next) {
         email : req.body.email
     };
     var query = "INSERT INTO stu set ?"
-    //var query = "INSERT INTO stu(NAME,EMAIL) VALUES('" + name + "', '" + email + "')";
     console.log(query);
     conn.query(query,[data],function(err,details){
         if(err){
@@ -139,4 +137,5 @@ router.get('/completeInfo',function(req,res,next){
         }
     })
 })
+
 module.exports = router;
