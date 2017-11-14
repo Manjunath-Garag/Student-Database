@@ -125,7 +125,7 @@ router.post('/stuInfo/:id', function(req,res,next){
     })
 });
 
-/* To display the complete Student Database.*/
+/* To display the complete Student Database with help of Both Tables(Stu and Prof).*/
 router.get('/completeInfo',function(req,res,next){
     var query = "SELECT stu.id,stu.name,prof.phy,prof.che,prof.math FROM stu, prof WHERE stu.id = prof.id";
     conn.query(query,function(err,details){
